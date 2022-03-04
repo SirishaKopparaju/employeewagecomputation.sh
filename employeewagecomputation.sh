@@ -32,10 +32,10 @@ do
         fi
         salary=$(($perHourSalary * $wHour));
         totalSalary=$(($totalSalary + $salary));
+        Perdaysalary=$(($perHourSalary * $workingHour))
         ((day++));
 done
 echo "Employee has earned $totalSalary $ in a month (Total working Hour : $totalWorkingHour)";
-
 
 
 
