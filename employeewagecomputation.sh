@@ -1,18 +1,33 @@
-#! /bin/bash
+#! /bin/bash -x
+perHourSalary=20;
+workingHour=0;
+totalSalary=0;
 
-IS_PRESENT=1;
-IS_PART=2;
-EMP_RATE_PER_HR=20;
-EMP_WORKING_HOURS=20;
-checkEmp=$((RANDOM%3))
-case $checkEmp in
-$IS_PRESENT) empHrs=8;
-;;
-$IS_PART) empHrs=4
-;;
-*) empHrs=0
-;;
-esac
+for ((day=1; day<=20 ;day++))
+do
+        isPresent=$((RANDOM%3));
+        case $isPresent in
+                0)
+                #echo "Employee is absent";
+                workingHour=0;
+                ;;
 
-salary=$((empHrs*EMP_RATE_PER_HR*EMP_WORKING_HOURS))
-echo "Salary=$salary"
+                1)
+                #echo "Employee is present";
+                workingHour=8;
+                ;;
+
+                2)
+                #echo "Employee is working as part time";
+                workingHour=4;
+                ;;
+        esac
+        salary=$(($perHourSalary * $workingHour));
+        totalSalary=$(($totalSalary + $salary));
+done
+
+echo "Employee has earned $totalSalary $ in a month";
+
+
+
+
