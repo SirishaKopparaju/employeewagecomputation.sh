@@ -3,6 +3,7 @@
 IS_PRESENT=1;
 IS_PART=2;
 EMP_RATE_PER_HR=20;
+EMP_WORKING_HOURS=20;
 checkEmp=$((RANDOM%3))
 case $checkEmp in
 $IS_PRESENT) empHrs=8;
@@ -13,5 +14,5 @@ $IS_PART) empHrs=4
 ;;
 esac
 
-salary=$((empHrs*EMP_RATE_PER_HR))
+salary=$((empHrs*EMP_RATE_PER_HR*EMP_WORKING_HOURS))
 echo "Salary=$salary"
