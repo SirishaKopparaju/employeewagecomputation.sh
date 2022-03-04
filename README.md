@@ -1,1 +1,3 @@
 # employeewagecomputation.sh
+# ARITHMETIC
+# ARITHMETIC
